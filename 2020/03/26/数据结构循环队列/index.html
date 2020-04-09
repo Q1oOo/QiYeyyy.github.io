@@ -17,7 +17,7 @@
 
   
 
-  <title>死亡大物 | 琦野y</title>
+  <title>数据结构循环队列 | 琦野y</title>
 
   
 
@@ -95,13 +95,13 @@
         <div class="type-wrap">
           
         </div>
-        <h1 class="title-wrap">死亡大物</h1>
+        <h1 class="title-wrap">数据结构循环队列</h1>
         <h2 class="title-sub-wrap">
           <strong>QiYeyyy</strong>
           <span>发布于</span>
           
   <a href="javascript:;" class="article-date">
-    <time datetime="2020-03-25T09:37:52.385Z" itemprop="datePublished">2020-03-25</time>
+    <time datetime="2020-03-26T09:23:53.298Z" itemprop="datePublished">2020-03-26</time>
   </a>
 
         </h2>
@@ -125,33 +125,22 @@
       
 
       <div class="article-entry">
-        <h3 id="大学物理"><a href="#大学物理" class="headerlink" title="大学物理"></a>大学物理</h3><p>  <img src="image-20200325162617530.png" alt="image-20200325162617530">  </p>
-<p>运用动量定理：  </p>
-<p><img src="image-20200325162841741.png" alt="image-20200325162841741">  </p>
-<p><img src="image-20200325163624593.png" alt="image-20200325163624593">  </p>
-<p><img src="image-20200325164025145.png" alt="image-20200325164025145">  </p>
-<p>小球相对地面移动距离x=R-S  </p>
-<p><img src="image-20200325164647465.png" alt="image-20200325164647465">  </p>
-<p><img src="image-20200325165045512.png" alt="image-20200325165045512">  </p>
-<p>动能定理：  </p>
-<p><img src="image-20200325165951762.png" alt="image-20200325165951762">  </p>
-<p><img src="image-20200325170553983.png" alt="image-20200325170553983">  </p>
-<p><img src="image-20200325170841512.png" alt="image-20200325170841512">  </p>
-<p>常见力的功   </p>
-<p><img src="image-20200325171112890.png" alt="image-20200325171112890">  </p>
-<p><img src="image-20200325171331221.png" alt="image-20200325171331221">  </p>
-<p><img src="image-20200325171513904.png" alt="image-20200325171513904">  </p>
-<p><img src="image-20200325171555802.png" alt="image-20200325171555802">  </p>
-<p>万有引力与弹力做功只与始末位置有关。  </p>
-<p><img src="image-20200325171859424.png" alt="image-20200325171859424">  </p>
-<p><img src="image-20200325172038310.png" alt="image-20200325172038310">  </p>
-<p><img src="image-20200325172332595.png" alt="image-20200325172332595">  </p>
-<p><img src="image-20200325172614097.png" alt="image-20200325172614097">  </p>
-<p><img src="image-20200325173137566.png" alt="image-20200325173137566">  </p>
-<p><img src="image-20200325173451531.png" alt="image-20200325173451531">  </p>
-<p><img src="image-20200325173512297.png" alt="image-20200325173512297">  </p>
-<p>语言不通，听课真难。  </p>
-<p>原地炸裂QAQ   </p>
+        <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>顺序队列   </p>
+<p>一个入队，队尾指针（rear）加一，一个出队，队头指针（front）加一。  </p>
+<p><img src="C:%5CUsers%5C19475%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200326161028704.png" alt="image-20200326161028704">  </p>
+<p>假溢出：队列所占用的空间并没有满，可是无法进行入队操作。  </p>
+<p>解决方案：将顺序队列所占用的空间想象成环状，利用取余的操作将实现指针从M-1的位置回到0。    </p>
+<p><img src="C:%5CUsers%5C19475%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200326161825598.png" alt="image-20200326161825598">  </p>
+<p>队空/队满：front==rear。  </p>
+<p><img src="C:%5CUsers%5C19475%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200326162316091.png" alt="image-20200326162316091">  </p>
+<p>当front==rear时，无法判断队空或者队满。    </p>
+<p>解决方案：   </p>
+<p><img src="C:%5CUsers%5C19475%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200326162608407.png" alt="image-20200326162608407">  </p>
+<p>方法2：  </p>
+<p>​    入队操作：rear=(reae+1)%Maxsize   </p>
+<p>​    出队操作：front=(front+1)%Maxsize  </p>
+<p><img src="C:%5CUsers%5C19475%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200326172036335.png" alt="image-20200326172036335">  </p>
+<p>加油！</p>
 
       </div>
 
@@ -164,28 +153,15 @@
 <nav class="card-container card-article-nav">
   <div class="card-wrap">
     
-      <div id="article-nav-newer" class="card-item">
-        <article>
-          
-          <a class="card-link article-nav-link" href="/2020/03/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"></a>
-          <strong class="article-nav-caption">Newer</strong>
-          <p class="article-nav-title">
-            
-              数据结构循环队列
-            
-          </p>
-        </article>
-      </div>
-    
     
       <div id="article-nav-older" class="card-item">
         <article>
           
-          <a class="card-link article-nav-link" href="/2020/03/25/%E7%94%B5%E8%B7%AF%E4%B8%8E%E7%94%B5%E5%AD%90%E5%AD%A6/"></a>
+          <a class="card-link article-nav-link" href="/2020/03/25/%E6%AD%BB%E4%BA%A1%E5%A4%A7%E7%89%A9/"></a>
           <strong class="article-nav-caption">Older</strong>
           <p class="article-nav-title">
             
-              电路与电子学
+              死亡大物
             
           </p>
         </article>
